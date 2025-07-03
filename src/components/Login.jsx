@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { data, Navigate, useNavigate } from "react-router-dom"
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { Facebook } from "lucide-react";
 
 function Login({ isOpen, onClose }) {
     const navigate = useNavigate();
@@ -132,13 +133,19 @@ function Login({ isOpen, onClose }) {
                         </div>
                     </div>
                     <div className="flex justify-center items-center mt-10 border-2 border-black/20 dark:border-white/30 py-3 gap-4 cursor-pointer rounded-full hover:bg-black/20 transition-all 8.0s ease-in-out ">
-                        <img className="w-6 h-6" src="public/google.jpg" alt="google" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48">
+                            <path fill="#4285F4" d="M24 9.5c3.1 0 5.8 1.1 7.9 2.9l5.9-5.9C33.1 3.5 28.8 2 24 2 14.6 2 6.9 7.8 3.6 15.3l7 5.4C12.8 14.1 17.9 9.5 24 9.5z" />
+                            <path fill="#34A853" d="M46.1 24.5c0-1.5-.1-2.5-.3-3.7H24v7.1h12.4c-.5 2.6-2.1 4.9-4.5 6.4l7 5.4c4.1-3.7 6.2-9.1 6.2-15.2z" />
+                            <path fill="#FBBC05" d="M10.6 28.2c-.5-1.5-.8-3.1-.8-4.7s.3-3.2.8-4.7l-7-5.4C2.5 16.4 2 20.2 2 23.5s.5 7.1 1.6 10.1l7-5.4z" />
+                            <path fill="#EA4335" d="M24 44c5.8 0 10.6-1.9 14.1-5.1l-7-5.4c-2 1.3-4.6 2.1-7.1 2.1-6.1 0-11.2-4.6-13.1-10.8l-7 5.4C6.9 40.2 14.6 46 24 46z" />
+                            <path fill="none" d="M0 0h48v48H0z" />
+                        </svg>
                         <div className="font-semibold">
                             Sign in with Google
                         </div>
                     </div>
                     <div className="flex justify-center items-center mt-4 border-2 border-black/20 dark:border-white/30 py-3 gap-4 cursor-pointer rounded-full hover:bg-black/20 transition-all 8.0s ease-in-out">
-                        <img className="w-6 h-6" src="public/facebook.jpg" alt="google" />
+                        <Facebook />
                         <div className="font-semibold">
                             Sign in with facebook
                         </div>
