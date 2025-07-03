@@ -14,7 +14,7 @@ const Freebooks = forwardRef((props,ref)=> {
     useEffect(()=>{
         const getBook = async()=>{
             try{
-                const res = await axios.get("http://localhost:4001/book");
+                const res = await axios.get("https://bookstore-backend-8ka1.onrender.com/book");
                 setBook(res.data);
             }catch(err){
                 console.log(err);

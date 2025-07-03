@@ -11,7 +11,7 @@ function Books() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
+        const res = await axios.get("https://bookstore-backend-8ka1.onrender.com/book");
         console.log(res.data);
         setBook(res.data);
       }
@@ -23,7 +23,7 @@ function Books() {
   }, [])
   return (
     <>
-      <div className='md:px-20 px-4 dark:bg-black/95 dark:text-white/80'>
+      <div className='md:px-20 px-4 dark:text-white/80 '>
         <div className='text-center pt-24'>
           <h1 className='text-xl md:text-2xl font-semibold'>We're delighted to have you {""}
             <span className="text-pink-500">here! :)</span>
@@ -35,7 +35,7 @@ function Books() {
             </button>
           </Link>
         </div>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {
             book.map((item) => (
               <Cards item={item} key={item._id} />

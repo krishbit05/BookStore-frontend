@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 function Courses() {
   return (
     <>
-      <div className='overflow-x-hidden'>
+      <div className='overflow-x-hidden dark:bg-black/95'>
         <Navbar />
         <div>
           <Books />

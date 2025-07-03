@@ -16,7 +16,7 @@ function Signup() {
             password:data.password,
         }
         try {
-            const res = await axios.post("http://localhost:4001/signup", userInfo);
+            const res = await axios.post("https://bookstore-backend-8ka1.onrender.com/signup", userInfo);
         
             console.log(res.data); // Log full response
         
