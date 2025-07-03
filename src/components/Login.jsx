@@ -132,13 +132,13 @@ function Login({ isOpen, onClose }) {
                         </div>
                     </div>
                     <div className="flex justify-center items-center mt-10 border-2 border-black/20 dark:border-white/30 py-3 gap-4 cursor-pointer rounded-full hover:bg-black/20 transition-all 8.0s ease-in-out ">
-                        <img className="w-6 h-6" src="public/google.png" alt="google" />
+                        <img className="w-6 h-6" src="public/google.jpg" alt="google" />
                         <div className="font-semibold">
                             Sign in with Google
                         </div>
                     </div>
                     <div className="flex justify-center items-center mt-4 border-2 border-black/20 dark:border-white/30 py-3 gap-4 cursor-pointer rounded-full hover:bg-black/20 transition-all 8.0s ease-in-out">
-                        <img className="w-6 h-6" src="public/facebook.png" alt="google" />
+                        <img className="w-6 h-6" src="public/facebook.jpg" alt="google" />
                         <div className="font-semibold">
                             Sign in with facebook
                         </div>
