@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
-import {data, Navigate, useNavigate} from "react-router-dom"
+import { data, Navigate, useNavigate } from "react-router-dom"
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
@@ -13,27 +13,27 @@ function Login({ isOpen, onClose }) {
             email: data.email,
             password: data.password,
         }
-    
+
         try {
             const res = await axios.post("https://bookstore-backend-8ka1.onrender.com/login", userInfo, {
                 headers: {
                     "Content-Type": "application/json"
                 }
             });
-    
+
             console.log("FULL RESPONSE:", res.data);
-    
+
             if (res.data && res.data.message && res.data.user) {
                 toast.success("Login successful");
                 localStorage.setItem("Users", JSON.stringify(res.data.user));
                 navigate('/');
-                setTimeout(()=>{
+                setTimeout(() => {
                     window.location.reload();
-                },2000);
+                }, 2000);
             } else {
                 alert("Unexpected response format");
             }
-    
+
         } catch (err) {
             if (err.response && err.response.data && err.response.data.message) {
                 console.error(err);
