@@ -7,7 +7,7 @@ const AdminSidebar = () => {
 
   const navItems = [
     { icon: <LucideMenu />, label: "All Books", path: "/admin" },
-    { icon: <PlusCircle className="bg-green-300 rounded-full"/>, label: "Add Book", path: "/admin/add-books" },
+    { icon: <PlusCircle className="rounded-full"/>, label: "Add Book", path: "/admin/add-books" },
     { icon: <ShoppingBag />, label: "Orders", path: "/admin/orders" },
   ];
 
