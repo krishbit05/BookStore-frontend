@@ -45,7 +45,7 @@ const AdminHero = () => {
 
                                 <div className="hidden md:block md:col-span-2 text-gray-700">{item.title}</div>
                                 <div className="hidden md:block md:col-span-1 text-gray-700">{item.category}</div>
-                                <div className="col-span-1 md:col-span-1 text-green-600 font-semibold items-center">₹{item.price}</div>
+                                <div className="col-span-1 md:col-span-1 text-green-600 font-semibold pl-[50px]">₹{item.price}</div>
                             </div>
                         ))}
                     </div>
