@@ -23,7 +23,7 @@ const AdminHero = () => {
                 <div className="px-4 py-6 w-full">
                     <h2 className="text-2xl font-semibold">All books</h2>
                     <div className="border border-black/30 rounded-md py-2">
-                        <div className="grid grid-cols-7 px-4 border-b border-black/30 font-bold ">
+                        <div className="grid grid-cols-7 px-4 py-2 border-b border-black/30 font-bold ">
                             <div className="col-span-3">Books</div>
                             <div className="col-span-2">Title</div>
                             <div className="col-span-1">Category</div>
