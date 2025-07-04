@@ -32,7 +32,7 @@ const AdminHero = () => {
                         {books.map((item) => (
                             <div
                                 key={item._id}
-                                className="grid grid-cols-7 px-4 py-3 items-center border-b last:border-b-0 hover:bg-gray-50 transition"
+                                className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 px-4 py-3 items-center border-b last:border-b-0 hover:bg-gray-50 transition"
                             >
                                 <div className="col-span-1 sm:col-span-3 flex items-center gap-4">
                                     <img
