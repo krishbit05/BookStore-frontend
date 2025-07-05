@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { LucideMenu, PlusCircle, ShoppingBag } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import AdminSidebar from "./AdminSidebar";
 
 
 export default function AdminNavbar() {
