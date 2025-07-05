@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthProvider';
 import Login from './Login';
 import Logout from './Logout';
-import {ShoppingCart} from "lucide-react"
+import { ShoppingCart } from "lucide-react"
 import { useCart } from '../context/CartProvider';
 import { useNavigate } from 'react-router-dom';
- 
+
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
   const { cartItems } = useCart();
-
+  
   const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -47,12 +47,22 @@ function Navbar() {
       <li><a href="/" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Home</a></li>
       <li><a href="/course" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Books</a></li>
       <li><a href="/contact" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Contact</a></li>
-      <li><a onClick={() => navigate("/cart")} className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500"><ShoppingCart/>
-      {cartItems.length > 0 && (
-          <span className="bg-red-500 text-white text-xs rounded-full px-2">
-            {cartItems.length}
-          </span>
-        )}</a></li>
+      <li>
+        <a
+          onClick={() => navigate("/cart")}
+          className="hover:text-pink-500 block px-4 py-2 relative dark:text-white/90 dark:hover:text-pink-500"
+        >
+          <div className="relative inline-block">
+            <ShoppingCart className="w-6 h-6" />
+
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold rounded-full px-1.5 py-0.5 leading-none">
+                {cartItems.length}
+              </span>
+            )}
+          </div>
+        </a>
+      </li>
     </>
   );
 
@@ -78,7 +88,7 @@ function Navbar() {
               <input type="search" placeholder="Search" className="w-full outline-none text-sm bg-transparent dark:text-black dark:placeholder:text-black" />
             </div>
           </div>
-          
+
           <div onClick={() => setIsDark(!isDark)} className="cursor-pointer">
             {isDark ? (
               // sun

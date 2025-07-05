@@ -20,7 +20,7 @@ export default function CartPage() {
         <h2 className="text-2xl font-bold">🛒 Your Cart</h2>
         <button
           onClick={() => navigate("/orders")}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
           📦 My Orders
         </button>
@@ -84,7 +84,7 @@ export default function CartPage() {
               className="mt-6 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded"
               onClick={handleCheckout}
             >
-              ✅ Pay Now
+              Pay Now
             </button>
           </div>
         </div>
