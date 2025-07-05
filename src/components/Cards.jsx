@@ -1,6 +1,8 @@
 import React from 'react'
+import { useCart } from '../context/CartProvider'
 
 function Cards({item}) {
+  const {addToCart} = useCart();
   return (
     <div className='p-2 bg-red-100 dark:bg-red-300 rounded-md transition-transform duration-300 scale-95 hover:scale-100 dark:text-black'>
       <div className='flex justify-center'>
@@ -17,8 +19,8 @@ function Cards({item}) {
         <div className='flex justify-between px-2'>
           <button className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>${item.price}</button>
           <button 
-            onClick={() => window.open(`/buy/${item._id}`, '_blank')}
-            className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>buy now</button>
+            onClick={()=>addToCart(item)}
+            className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>Add to Cart</button>
         </div>
       </div>
 

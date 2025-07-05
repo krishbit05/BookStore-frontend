@@ -3,9 +3,11 @@ import { useAuth } from '../context/AuthProvider';
 import Login from './Login';
 import Logout from './Logout';
 import {ShoppingCart} from "lucide-react"
+import { useCart } from '../context/CartProvider';
  
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
+  const { cartItems } = useCart();
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -13,6 +15,8 @@ function Navbar() {
   const [isDark, setIsDark] = useState(theme === "dark" ? true : false);
   const [showLogin, setShowLogin] = useState(false);
   const element = document.documentElement;
+
+
 
   useEffect(() => {
     if (theme === "dark") {
@@ -40,7 +44,12 @@ function Navbar() {
       <li><a href="/" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Home</a></li>
       <li><a href="/course" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Books</a></li>
       <li><a href="/contact" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Contact</a></li>
-      <li><a href="/purchases" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500"><ShoppingCart/></a></li>
+      <li><a href="/cart" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500"><ShoppingCart/>
+      {cartItems.length > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">
+            {cartItems.length}
+          </span>
+        )}</a></li>
     </>
   );
 
