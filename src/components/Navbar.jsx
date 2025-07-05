@@ -4,10 +4,13 @@ import Login from './Login';
 import Logout from './Logout';
 import {ShoppingCart} from "lucide-react"
 import { useCart } from '../context/CartProvider';
+import { useNavigate } from 'react-router-dom';
  
 function Navbar() {
   const [authUser, setAuthUser] = useAuth();
   const { cartItems } = useCart();
+
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +47,7 @@ function Navbar() {
       <li><a href="/" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Home</a></li>
       <li><a href="/course" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Books</a></li>
       <li><a href="/contact" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500">Contact</a></li>
-      <li><a href="/cart" className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500"><ShoppingCart/>
+      <li><a onClick={() => navigate("/cart")} className="hover:text-pink-500 block px-4 py-2 dark:text-white/90 dark:hover:text-pink-500"><ShoppingCart/>
       {cartItems.length > 0 && (
           <span className="bg-red-500 text-white text-xs rounded-full px-2">
             {cartItems.length}
