@@ -3,6 +3,7 @@ import { FileUp } from "lucide-react";
 import AdminNavbar from "./AdminNavBar";
 import AdminSidebar from "./AdminSidebar";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 export default function AddBooks() {
   const [formData, setFormData] = useState({
@@ -25,6 +26,7 @@ export default function AddBooks() {
     try {
       const res = await axios.post("https://bookstore-backend-8ka1.onrender.com/book/add-books", formData);
       console.log("Book added:", res.data);
+      toast.success("Book Added Successfully")
       setFormData({ image: "", name: "", title: "", category: "", price: "" });
     } catch (err) {
       console.error("Error adding book:", err);

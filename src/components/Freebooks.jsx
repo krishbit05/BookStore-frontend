@@ -23,7 +23,7 @@ const Freebooks = forwardRef((props,ref)=> {
         getBook();
     },[])
 
-    const filterData = book.filter((data) => data.category === "Free");
+    const filterData = book.filter((data) => data.price === 0);
     var settings = {
         dots: true,
         infinite: false,
