@@ -2,11 +2,19 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { LucideMenu, PlusCircle, ShoppingBag } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAdminAuth } from "../context/AuthAdminProvider";
 
 
 export default function AdminNavbar() {
     const navigate = useNavigate();
     const { pathname } = useLocation();
+
+    const { logout } = useAdminAuth();
+
+    const handleLogout = () => {
+        logout();
+        setTimeout(() => navigate("/"), 0); 
+    };
 
     const navItems = [
         { icon: <LucideMenu />, label: "All Books", path: "/admin" },
@@ -30,6 +38,7 @@ export default function AdminNavbar() {
                         Hi! Admin
                     </div>
                     <button
+                        onClick={handleLogout}
                         className="text-sm bg-red-500 text-white px-2 py-1 md:px-4 md:py-2 rounded hover:bg-red-600 transition"
                     >
                         Logout
@@ -47,7 +56,7 @@ export default function AdminNavbar() {
                     <div
                         key={index}
                         onClick={() => { navigate(item.path); setShowSidebar(false); }}
-                        className={`flex gap-2 items-center p-2 rounded cursor-pointer transition ${showSidebar ?'block':'hidden'}
+                        className={`flex gap-2 items-center p-2 rounded cursor-pointer transition ${showSidebar ? 'block' : 'hidden'}
                       ${pathname === item.path
                                 ? 'bg-pink-500 text-white'
                                 : 'text-black'
