@@ -9,6 +9,7 @@ import { useAuth } from './context/AuthProvider';
 import Purchases from './purchases/Purchases';
 import Admin from './admin/Admin';
 import AddBooks from './components/AddBooks';
+import BuyPage from './buyPage/BuyPage';
 
 function App() {
   const [authUser,setAuthUser] = useAuth();
@@ -24,7 +25,8 @@ function App() {
           <Route path='/Purchases' element={<Purchases/>}/>
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/admin/add-books' element={<AddBooks/>}/>
-        </Routes>
+          <Route path='/buy' element={<BuyPage/>}/>
+        </Routes> 
         <Toaster />
       </div>
     </>

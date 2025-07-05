@@ -16,7 +16,9 @@ function Cards({item}) {
         </p>
         <div className='flex justify-between px-2'>
           <button className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>${item.price}</button>
-          <button className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>buy now</button>
+          <button 
+            onClick={() => window.open(`/buy/${item._id}`, '_blank')}
+            className='border-2 px-1 md:px-3 rounded-md md:rounded-full border-black hover:bg-pink-500 transition-all ease-in-out'>buy now</button>
         </div>
       </div>
 
